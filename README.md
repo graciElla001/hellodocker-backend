@@ -8,7 +8,7 @@ docker build -t hello-world-app .
 ## Run
 docker run -p 8080:80 hello-world-app
 
-Explanation of Dockerfile Instructions
+## Explanation of Dockerfile Instructions
 
 FROM: Uses an existing image (Nginx) as the base. It already has a web server installed.
 RUN: Executes commands while building the image. Here, it removes default files.
