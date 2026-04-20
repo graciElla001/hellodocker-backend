@@ -24,7 +24,7 @@ Docker images are tagged with:
 
 The commit SHA is generated using:
 
-git rev-parse --short HEAD
+"SHA=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
 
 This allows traceability and easy rollback to previous versions.
 
