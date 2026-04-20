@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  backend:
+    image: ijeoma12345/hellodocker-backend:latest
+    ports:
+      - "5000:5000"
+
+  frontend:
+    image: ijeoma12345/hellodocker-frontend:latest
+    ports:
+      - "3000:80"
