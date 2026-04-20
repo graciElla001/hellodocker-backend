@@ -31,4 +31,4 @@ jobs:
     - name: Push Docker image
       run: |
         docker push ${{ secrets.DOCKER_USERNAME }}/hellodocker-backend:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/hellodocker-frontend:${{ steps.vars.outputs.SHA }} .
+        docker push ${{ secrets.DOCKER_USERNAME }}/hellodocker-backend:${{ steps.vars.outputs.SHA }} .
