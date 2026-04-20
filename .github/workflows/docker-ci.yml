@@ -3,7 +3,7 @@ name: Docker CI/CD Pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-push:
@@ -20,7 +20,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker image
-      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/hello-docker:latest .
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/hellodocker-backend:latest .
 
     - name: Push Docker image
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/hello-docker:latest
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/hellodocker-backend:latest
