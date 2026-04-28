@@ -45,7 +45,7 @@ https://hub.docker.com/repository/docker/ijeoma12345/hellodocker-backend/general
 
 After running `docker-compose up -d`, the following services are available:
 
-- Backend Service → http://localhost:5000
+- Backend Service → http://localhost:80
 - Frontend Service → http://localhost:3000
 - Prometheus → http://localhost:9090
 - Grafana → http://localhost:3001
