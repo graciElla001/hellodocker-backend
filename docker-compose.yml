@@ -4,9 +4,36 @@ services:
   backend:
     image: ijeoma12345/hellodocker-backend:latest
     ports:
-      - "5000:5000"
+      - "5000:80"
+    restart: always
 
   frontend:
     image: ijeoma12345/hellodocker-frontend:latest
     ports:
       - "3000:80"
+    restart: always
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: always
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3001:3000"
+    depends_on:
+      - prometheus
+    restart: always
+
+  blackbox:
+    image: prom/blackbox-exporter:latest
+    container_name: blackbox
+    ports:
+      - "9115:9115"
+    restart: always
